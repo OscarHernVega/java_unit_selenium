@@ -10,6 +10,12 @@ public class BasicAuthTest extends BaseTest {
             "Congratulations! You must have the proper credentials"));
 
     //todo: add basic auth
+    @beforeMethod
+    public void basicAuth(){
+    HasAuthentication authentication = (HasAuthentication) driver;
+    authentication.register(() -> new UsernameAndPassword("admin", "admin"));
+    }
+
 
     @Test
     public void basicAuthTest() {
